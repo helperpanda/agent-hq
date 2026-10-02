@@ -1,0 +1,8 @@
+[
+  {"id": "chief",    "name": "판다 팀장",     "emoji": "🐼", "role": "총괄 · 일일 보고",       "color": "#2b2b2b", "desk": "corner"},
+  {"id": "analyst",  "name": "부엉이 분석가", "emoji": "🦉", "role": "성과 분석 · 주간 리포트", "color": "#8a6a3d"},
+  {"id": "shorts",   "name": "수달 PD",       "emoji": "🦦", "role": "자연과학 키즈 쇼츠",      "color": "#7a5534"},
+  {"id": "cardnews", "name": "여우 에디터",   "emoji": "🦊", "role": "인스타 카드뉴스",         "color": "#e0742b"},
+  {"id": "blog",     "name": "토끼 블로거",   "emoji": "🐰", "role": "네이버 블로그",           "color": "#c9a0c4"},
+  {"id": "stock",    "name": "곰 애널리스트", "emoji": "🐻", "role": "국내주식 분석 (Phase 2)", "color": "#6b4a2b", "locked": true}
+]
