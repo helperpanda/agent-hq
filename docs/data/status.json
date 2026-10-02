@@ -9,24 +9,9 @@
     "message": "어제 입력된 성과/피드백 없음 - 분석 생략",
     "updated": "2026-10-02T21:29:36+09:00"
   },
-  "shorts": {
-    "state": "idle",
-    "message": "대기 중",
-    "updated": "2026-10-02T17:45:14+09:00"
-  },
-  "cardnews": {
-    "state": "waiting",
-    "message": "카드뉴스 3장 완료, 8:30 업로드 대기",
-    "updated": "2026-10-02T21:13:07+09:00"
-  },
   "blog": {
     "state": "idle",
     "message": "내일 07:00 출근",
     "updated": "2026-10-02T16:45:14+09:00"
-  },
-  "stock": {
-    "state": "idle",
-    "message": "Phase 2 오픈 예정",
-    "updated": "2026-10-02T15:25:14+09:00"
   }
 }

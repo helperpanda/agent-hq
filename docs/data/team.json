@@ -15,34 +15,10 @@
     "color": "#8a6a3d"
   },
   {
-    "id": "shorts",
-    "name": "수달 PD",
-    "emoji": "🦦",
-    "role": "휴무 · 사장님이 직접 진행",
-    "color": "#7a5534",
-    "locked": true
-  },
-  {
-    "id": "cardnews",
-    "name": "여우 에디터",
-    "emoji": "🦊",
-    "role": "휴무 · 사장님이 직접 진행",
-    "color": "#e0742b",
-    "locked": true
-  },
-  {
     "id": "blog",
     "name": "토끼 블로거",
     "emoji": "🐰",
     "role": "네이버 블로그",
     "color": "#c9a0c4"
-  },
-  {
-    "id": "stock",
-    "name": "곰 애널리스트",
-    "emoji": "🐻",
-    "role": "휴무 (Phase 2)",
-    "color": "#6b4a2b",
-    "locked": true
   }
 ]

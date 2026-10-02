@@ -8,7 +8,7 @@ on:
     - cron: "0 13 * * 0"     # 일 22:00 KST improver 회고/개선
   workflow_dispatch:
     inputs:
-      agent: {description: "chief|analyst|daily|cardnews|blog|shorts|improver", required: true}
+      agent: {description: "chief|analyst|daily|blog|improver", required: true}
 permissions: {contents: write, pull-requests: write}
 concurrency: {group: agents, cancel-in-progress: false}
 jobs:
@@ -27,15 +27,13 @@ jobs:
         run: |
           for d in outbox reports proposals metrics feedback; do ln -s _data/$d $d; done
           npm i -g @anthropic-ai/claude-code
-          sudo apt-get install -y -qq fonts-nanum >/dev/null; pip install -q pillow
+          sudo apt-get install -y -qq fonts-nanum >/dev/null; pip install -q pillow markdown
           git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
       - name: pick agent
         id: pick
         run: |
           case "${{ github.event.schedule }}${{ inputs.agent }}" in
-            "0 21 * * *"|cardnews) echo "a=cardnews" >> $GITHUB_OUTPUT; echo "p=cardnews 에이전트로 오늘 카드뉴스 3장 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
             "0 22 * * *"|blog)     echo "a=blog" >> $GITHUB_OUTPUT; echo "p=blog 에이전트로 오늘 원고 1편 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
-            "0 1 * * *"|shorts) echo "a=shorts" >> $GITHUB_OUTPUT; echo "p=shorts 에이전트로 쇼츠 대본 1편 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
             "30 20 * * *"|daily) echo "a=daily" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 일일 모드 분석을 해줘 (어제 성과와 승인/반려 피드백만)" >> $GITHUB_OUTPUT;;
             "0 12 * * *"|chief)    echo "a=chief" >> $GITHUB_OUTPUT; echo "p=chief 에이전트로 오늘 일일 보고 작성해" >> $GITHUB_OUTPUT;;
             "0 11 * * 0"|analyst)  echo "a=analyst" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 주간 리포트 작성해" >> $GITHUB_OUTPUT;;
