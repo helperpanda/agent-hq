@@ -28,7 +28,7 @@ jobs:
         run: |
           for d in outbox reports proposals metrics; do ln -s _data/$d $d; done
           npm i -g @anthropic-ai/claude-code
-          git config user.name agent-hq; git config user.email agent-hq@users.noreply.github.com
+          git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
       - name: pick agent
         id: pick
         run: |
