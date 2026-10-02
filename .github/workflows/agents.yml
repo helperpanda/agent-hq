@@ -28,6 +28,7 @@ jobs:
         run: |
           for d in outbox reports proposals metrics; do ln -s _data/$d $d; done
           npm i -g @anthropic-ai/claude-code
+          sudo apt-get install -y -qq fonts-nanum >/dev/null; pip install -q pillow
           git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
       - name: pick agent
         id: pick
@@ -55,7 +56,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: |
           python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} working "자동 실행 시작"
-          claude -p "${{ steps.pick.outputs.p }}" --model ${{ steps.gate.outputs.m }} --max-turns ${{ steps.gate.outputs.t }} --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch" || python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} error "자동 실행 실패 (Actions 로그 확인)"
+          claude -p "${{ steps.pick.outputs.p }}" --model ${{ steps.gate.outputs.m }} --max-turns ${{ steps.gate.outputs.t }} --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch WebFetch" || python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} error "자동 실행 실패 (Actions 로그 확인)"
       - name: save data repo
         run: |
           cd _data && git add -A && (git diff --cached --quiet || git commit -qm "data: ${{ steps.pick.outputs.a }}") && git pull -q --rebase && git push -q
