@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-02T20:36:59+09:00",
+    "agent": "cardnews",
+    "state": "waiting",
+    "message": "카드뉴스 3장 완료, 8:30 예약 필요"
+  },
+  {
+    "time": "2026-10-02T20:36:33+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "오늘 뉴스 수집 중"
+  },
+  {
+    "time": "2026-10-02T20:36:28+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-02T20:34:25+09:00",
     "agent": "analyst",
     "state": "idle",

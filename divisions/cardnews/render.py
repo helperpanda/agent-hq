@@ -34,8 +34,7 @@ def gradient(c1, c2):
 
 def wrap(draw, text, fnt, maxw):
     lines = []
-    for para in text.split("
-"):
+    for para in text.split("\n"):
         cur = ""
         for word in para.split(" "):
             t = (cur + " " + word).strip()
