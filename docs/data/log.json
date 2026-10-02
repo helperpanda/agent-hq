@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-02T20:29:30+09:00",
+    "agent": "chief",
+    "state": "done",
+    "message": "일일 보고 완료"
+  },
+  {
+    "time": "2026-10-02T20:29:24+09:00",
+    "agent": "chief",
+    "state": "working",
+    "message": "일일 보고 작성 중"
+  },
+  {
+    "time": "2026-10-02T20:29:18+09:00",
+    "agent": "chief",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-02T18:44:14+09:00",
     "agent": "chief",
     "state": "done",

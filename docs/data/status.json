@@ -1,8 +1,8 @@
 {
   "chief": {
-    "state": "idle",
-    "message": "오늘 21시 일일 보고 예정",
-    "updated": "2026-10-02T18:45:15+09:00"
+    "state": "done",
+    "message": "일일 보고 완료",
+    "updated": "2026-10-02T20:29:30+09:00"
   },
   "analyst": {
     "state": "idle",
