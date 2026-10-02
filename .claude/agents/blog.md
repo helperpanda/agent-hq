@@ -24,7 +24,8 @@ tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
    - `spec.json`을 쓴다: `{"title":"썸네일에 넣을 제목","thumb_query":"english keywords","images":[{"query":"english keywords","caption":"한글 설명"}, ...]}`
    - `python divisions/blog/make_images.py spec.json outbox/blog/YYYY-MM-DD` 실행 → thumb.jpg, img_N.jpg, contact.jpg 생성
    - **`contact.jpg`를 Read로 열어 사진이 주제에 맞는지 확인한다.** 안 맞는 장은 query를 바꿔 다시 만든다(최대 2회). 글자·로고가 박힌 사진, 얼굴이 크게 나오는 사람 사진은 피한다.
-   - 사진 검색어는 구체적 장면으로 (예: "calculator documents desk" ○ / "money" ✕). 정확히 맞는 사진이 없으면 글자 카드(자동 대체)도 괜찮다.
+   - **현재 모드: 큰 글씨 카드**(Pexels 미사용). 각 이미지의 caption은 카드에 크게 들어가므로 12자 안팎의 짧고 굵은 문구로 쓴다. 사진 검색어는 비워도 된다.
+   - (사진 모드로 돌아갈 때) 사진 검색어는 구체적 장면으로 (예: "calculator documents desk" ○ / "money" ✕). 정확히 맞는 사진이 없으면 글자 카드(자동 대체)도 괜찮다.
 7. `python divisions/blog/build_post.py outbox/blog/YYYY-MM-DD` → 이미지가 내장된 복붙용 `post.html` 생성
 8. `divisions/blog/keywords.csv`에 한 줄 추가 (date,keyword,search_volume_guess,posted,notes — 검색량은 추측치라 상/중/하로만, posted는 비워둠)
 9. `python scripts/status.py blog waiting "원고 1편 발행 대기: <제목 요약>"`

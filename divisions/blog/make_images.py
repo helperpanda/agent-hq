@@ -3,7 +3,7 @@
 spec: {"title":"썸네일에 넣을 글 제목", "thumb_query":"english keywords",
        "images":[{"query":"english keywords","caption":"한글 설명(대체 문구)"}, ...]}
 결과: outdir/thumb.jpg(대표, 1000x1000), img_1.jpg.. (본문, 폭 1200), contact.jpg(검수용 한눈 보기), credits.txt
-PEXELS_API_KEY 가 없거나 검색 실패하면 그 장은 글자 카드(그라데이션)로 대체하고 표시한다.
+기본은 큰 글씨 카드. 사진은 USE_PHOTOS=1 + PEXELS_API_KEY 일 때만 쓴다. 키가 없거나 검색 실패하면 그 장은 글자 카드(그라데이션)로 대체하고 표시한다.
 이전에 쓴 사진은 used_photos.txt 로 중복 방지."""
 import hashlib, io, json, os, sys, urllib.parse, urllib.request
 from pathlib import Path
@@ -26,7 +26,7 @@ def font(weight, size):
 
 def pexels(query):
     key = os.environ.get("PEXELS_API_KEY")
-    if not key or not query:
+    if os.environ.get("USE_PHOTOS") != "1" or not key or not query:
         return None
     skip = set(USED.read_text().split()) if USED.exists() else set()
     try:
@@ -77,6 +77,16 @@ def wrap(d, text, f, maxw):
     return lines + [cur]
 
 
+def fit(d, text, weight, maxw, maxh, hi, lo=48):
+    """칸에 맞는 가장 큰 글씨 크기로 줄바꿈."""
+    for sz in range(hi, lo - 1, -4):
+        f = font(weight, sz)
+        lines = wrap(d, text, f, maxw)
+        if len(lines) * sz * 1.3 <= maxh:
+            return f, lines, sz
+    return f, lines, sz
+
+
 def main():
     spec = json.load(open(sys.argv[1], encoding="utf-8"))
     out = Path(sys.argv[2])
@@ -93,11 +103,11 @@ def main():
         base = card(spec["title"], (S, S))
         fallbacks.append("thumb")
     d = ImageDraw.Draw(base)
-    f = font("Bold", 72)
-    y = 330
-    for ln in wrap(d, spec["title"], f, S - 140)[:4]:
-        d.text((70, y), ln, font=f, fill=(255, 255, 255), anchor="lm")
-        y += 100
+    f, lines, sz = fit(d, spec["title"], "Bold", S - 120, 760, 130)
+    y = (S - len(lines) * sz * 1.3) / 2 + sz * 0.65
+    for ln in lines:
+        d.text((60, y), ln, font=f, fill=(255, 255, 255), anchor="lm")
+        y += sz * 1.3
     base.save(out / "thumb.jpg", quality=90)
     paths = [out / "thumb.jpg"]
 
@@ -111,11 +121,11 @@ def main():
             fallbacks.append(f"img_{i}")
             im = card(it.get("caption", ""), (1200, 675))
             dd = ImageDraw.Draw(im)
-            ff = font("Bold", 56)
-            yy = 300
-            for ln in wrap(dd, it.get("caption", ""), ff, 1000)[:3]:
-                dd.text((100, yy), ln, font=ff, fill=(255, 255, 255), anchor="lm")
-                yy += 78
+            ff, lines, sz = fit(dd, it.get("caption", ""), "Bold", 1040, 520, 110)
+            yy = (675 - len(lines) * sz * 1.3) / 2 + sz * 0.65
+            for ln in lines:
+                dd.text((80, yy), ln, font=ff, fill=(255, 255, 255), anchor="lm")
+                yy += sz * 1.3
         im.save(out / f"img_{i}.jpg", quality=88)
         paths.append(out / f"img_{i}.jpg")
 
