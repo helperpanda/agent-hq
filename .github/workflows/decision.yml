@@ -1,0 +1,29 @@
+name: decision
+on: {issues: {types: [opened]}}
+permissions: {contents: write, issues: write}
+concurrency: {group: agents, cancel-in-progress: false}
+jobs:
+  d:
+    if: github.actor == 'helperpanda' && startsWith(github.event.issue.title, '[결정]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: {repository: helperpanda/agent-hq-data, token: "${{ secrets.DATA_REPO_PAT }}", path: _data}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: apply
+        env: {BODY: "${{ github.event.issue.body }}"}
+        run: python scripts/decide.py | tee out.txt
+      - name: save
+        run: |
+          git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
+          (cd _data && git add -A && git commit -qm "decision #${{ github.event.issue.number }}" && git pull -q --rebase && git push -q)
+          git add docs/data && git commit -qm "decision: status" && git pull -q --rebase origin main && git push -q origin main
+      - name: close
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }} -c "✅ $(cat out.txt)"
+      - name: error
+        if: failure()
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh issue comment ${{ github.event.issue.number }} -R ${{ github.repository }} -b "❌ 처리 실패: $(cat out.txt 2>/dev/null) (Actions 로그 확인)"

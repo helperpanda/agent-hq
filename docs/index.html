@@ -98,6 +98,15 @@ h1{font-family:"DotGothic16",monospace;font-size:28px;margin:0;letter-spacing:1p
 .filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
 .filter button{font:inherit;font-size:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:2px 10px;cursor:pointer}
 .filter button.on{background:var(--ink);color:var(--bg)}
+.inbox{list-style:none;margin:0;padding:0}
+.inbox li{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 2px;border-bottom:1px dashed var(--muted);font-size:14px}
+.inbox li:last-child{border-bottom:0}
+.inbox .what{flex:1;min-width:150px}
+.inbox .what small{display:block;color:var(--muted);font-size:11px}
+.ab{font:inherit;font-size:13px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--bg);border:2px solid var(--line);padding:4px 10px;box-shadow:2px 2px 0 var(--line)}
+.ab.ok{background:var(--working);color:#fff}.ab.no{background:var(--error);color:#fff}
+.ab:active{transform:translate(2px,2px);box-shadow:none}
+.hint{color:var(--muted);font-size:12px;margin:0 0 8px}
 .err{color:var(--error);font-size:13px}
 footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
 </style>
@@ -124,6 +133,11 @@ footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
   </div>
 
   <div class="cols">
+    <section class="panel">
+      <h2>📥 승인함 <span id="inboxCount" style="font-size:13px"></span></h2>
+      <p class="hint">① 열어보기로 결과물 확인 → ② 승인 또는 반려 (제출 버튼 한 번 더 누르면 완료). 승인해도 자동 발행되지 않아요. 업로드는 사장님이 직접 합니다.</p>
+      <ul class="inbox" id="inbox"></ul>
+    </section>
     <section class="panel">
       <h2>📜 업무 일지</h2>
       <div class="filter" id="filter"></div>
@@ -196,7 +210,18 @@ function drawAll(){
 }
 setInterval(()=>{FRAME^=1;document.querySelectorAll("canvas[data-anim]").forEach(cv=>drawSprite(cv,cv.dataset.sp,cv.dataset.st,FRAME))},350);
 
-let team=[], status={}, log=[], filterId="all";
+let team=[], status={}, log=[], pending=[], filterId="all";
+const DIV={cardnews:"카드뉴스",blog:"블로그",shorts:"쇼츠"};
+const ISSUE="https://github.com/helperpanda/agent-hq/issues/new?template=decision.yml";
+function renderInbox(){
+  document.getElementById("inboxCount").textContent=pending.length?"("+pending.length+"건 대기)":"";
+  document.getElementById("inbox").innerHTML=pending.length?pending.map(p=>{
+    const q=d=>ISSUE+"&title="+encodeURIComponent("[결정] "+p.id)+"&target="+encodeURIComponent(p.id)+"&decision="+encodeURIComponent(d);
+    return `<li><div class="what"><b>${esc(DIV[p.division]||p.division)}</b> ${esc(p.date)}<small>파일 ${p.files}개</small></div>
+      <a class="ab" href="${p.url}" target="_blank" rel="noopener">📂 열어보기</a>
+      <a class="ab ok" href="${q("승인")}" target="_blank" rel="noopener">✅ 승인</a>
+      <a class="ab no" href="${q("반려")}" target="_blank" rel="noopener">❌ 반려</a></li>`}).join(""):`<li><span style="color:var(--muted)">승인 대기 중인 결과물이 없어요 🎉</span></li>`;
+}
 
 async function getJSON(p){
   const r = await fetch(p+"?t="+Date.now(), {cache:"no-store"});
@@ -232,7 +257,8 @@ function render(){
   const counts={}; team.filter(a=>!a.locked).forEach(a=>{const s=(status[a.id]||{}).state||"idle";counts[s]=(counts[s]||0)+1});
   document.getElementById("summary").innerHTML=Object.keys(STATE).map(k=>
     `<span class="pill"><span class="dot" style="background:${STATE[k].color}"></span>${STATE[k].label} ${counts[k]||0}</span>`).join("");
-  document.getElementById("waitCount").textContent=counts.waiting||0;
+  document.getElementById("waitCount").textContent=Math.max(pending.length,counts.waiting||0);
+  renderInbox();
   renderFeed();
 }
 function renderFeed(){
@@ -250,6 +276,7 @@ function renderFeed(){
 async function load(){
   try{
     [team,status,log]=await Promise.all([getJSON("data/team.json"),getJSON("data/status.json"),getJSON("data/log.json")]);
+    pending=await getJSON("data/pending.json").catch(()=>[]);
     render();
     document.getElementById("refreshed").textContent=new Date().toLocaleTimeString("ko-KR");
   }catch(e){

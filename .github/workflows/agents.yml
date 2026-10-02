@@ -26,7 +26,7 @@ jobs:
         with: {python-version: "3.12"}
       - name: link data + install
         run: |
-          for d in outbox reports proposals metrics; do ln -s _data/$d $d; done
+          for d in outbox reports proposals metrics feedback; do ln -s _data/$d $d; done
           npm i -g @anthropic-ai/claude-code
           sudo apt-get install -y -qq fonts-nanum >/dev/null; pip install -q pillow
           git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
@@ -63,7 +63,8 @@ jobs:
       - name: save code/dashboard (improver 변경은 브랜치+PR)
         env: {GH_TOKEN: "${{ github.token }}"}
         run: |
-          rm -f outbox reports proposals metrics   # symlink 제거
+          python scripts/pending.py
+          rm -f outbox reports proposals metrics feedback   # symlink 제거
           BR=$(git branch --show-current)
           git add -A docs divisions .claude scripts
           git diff --cached --quiet || git commit -qm "auto: ${{ steps.pick.outputs.a }}"

@@ -1,0 +1,17 @@
+name: ✅ 결과물 승인/반려
+description: 대시보드 승인함에서 열립니다. 내용 확인 후 제출만 누르세요.
+title: "[결정] "
+body:
+  - type: markdown
+    attributes: {value: "⚠️ 이 레포는 공개라서 코멘트도 공개됩니다. 민감한 내용은 쓰지 마세요."}
+  - type: input
+    id: target
+    attributes: {label: 대상, description: "자동으로 채워집니다 (예: cardnews/2026-10-02)"}
+    validations: {required: true}
+  - type: dropdown
+    id: decision
+    attributes: {label: 결정, options: [승인, 반려]}
+    validations: {required: true}
+  - type: textarea
+    id: comment
+    attributes: {label: 코멘트 (선택), description: "반려 사유나 개선 요청. 에이전트가 다음 제작에 반영합니다."}

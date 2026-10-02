@@ -16,6 +16,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 7. `python scripts/status.py chief waiting "개선 제안 N건 승인 대기"` (제안 있을 때) 또는 `done`
 
 ## 규칙
+- `feedback/decisions.csv`(사장의 승인/반려+코멘트)도 읽고, 반려 사유는 해당 부서 playbook의 '피할 것'에 반영한다.
 - 데이터 5건 미만인 부서는 건드리지 않는다("데이터 부족").
 - 한 번에 부서당 변경 최대 2개 (원인 추적을 위해).
 - 사장 승인 게이트(발행/계정/돈/삭제)는 절대 우회·완화하는 변경을 제안하지 않는다.
