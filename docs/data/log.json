@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-02T21:13:07+09:00",
+    "agent": "cardnews",
+    "state": "waiting",
+    "message": "카드뉴스 3장 완료, 8:30 업로드 대기"
+  },
+  {
+    "time": "2026-10-02T21:12:42+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "오늘 뉴스 수집 중"
+  },
+  {
+    "time": "2026-10-02T21:12:36+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-02T20:36:59+09:00",
     "agent": "cardnews",
     "state": "waiting",
