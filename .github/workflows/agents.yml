@@ -1,9 +1,7 @@
 name: agents
 on:
   schedule:            # UTC (KST-9)
-    - cron: "0 21 * * *"     # 06:00 KST cardnews
     - cron: "0 22 * * *"     # 07:00 KST blog
-    - cron: "0 1 * * *"      # 10:00 KST 매일 shorts 1편
     - cron: "30 20 * * *"    # 05:30 KST 전날 피드백 분석 (제작 전에 playbook 갱신)
     - cron: "0 12 * * *"     # 21:00 KST chief 일일보고
     - cron: "0 11 * * 0"     # 일 20:00 KST analyst 주간

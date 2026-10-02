@@ -44,10 +44,8 @@ scripts/            공용 스크립트 (status.py 등)
 ## 스케줄 (서버 크론에서 `claude -p` 로 실행)
 | 시간 (KST) | 작업 |
 |---|---|
-| 06:00 매일 | cardnews: 카드뉴스 3장 생성 → outbox |
 | 07:00 매일 | blog: 원고 1편 생성 → outbox |
 | 05:30 매일 | analyst(일일): 전날 성과·승인/반려 피드백 → playbook 반영 (입력 없으면 생략) |
-| 10:00 매일 | shorts: 쇼츠 기획 + 대본 1편 → outbox |
 | 21:00 매일 | chief: 일일 보고서 작성 |
 | 일 20:00 | analyst: 주간 성과 리포트 + 다음 주 개선안 |
 | (Phase 2) 08:30 / 16:00 평일 | stock: 장전 브리핑 / 장마감 리포트 |
@@ -57,3 +55,8 @@ scripts/            공용 스크립트 (status.py 등)
 2. `divisions/<이름>/`, `metrics/<이름>.csv` 생성
 3. `docs/data/team.json`에 캐릭터 추가
 4. 위 스케줄 표 + 크론에 한 줄 추가
+
+## 현재 운영 범위 (2026-10-02 결정)
+- **가동:** chief(판다 팀장), blog(토끼 블로거), analyst(부엉이 영상분석가)
+- **휴무:** cardnews, shorts(사장님이 직접 제작·업로드), stock(Phase 2). 정의 파일은 보존, 크론 없음. 수동 호출만.
+- 인스타·유튜브 업로드와 영상 제작은 사장님이 직접 한다. 에이전트는 영상 **분석**(metrics/shorts.csv)과 블로그 원고만 맡는다.
