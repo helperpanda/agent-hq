@@ -1,0 +1,63 @@
+name: agents
+on:
+  schedule:            # UTC (KST-9)
+    - cron: "0 21 * * *"     # 06:00 KST cardnews
+    - cron: "0 22 * * *"     # 07:00 KST blog
+    - cron: "0 1 * * 2,4,6"  # 10:00 KST 화목토 shorts
+    - cron: "0 12 * * *"     # 21:00 KST chief 일일보고
+    - cron: "0 11 * * 0"     # 일 20:00 KST analyst 주간
+    - cron: "0 13 * * 0"     # 일 22:00 KST improver 회고/개선
+  workflow_dispatch:
+    inputs:
+      agent: {description: "chief|analyst|cardnews|blog|shorts|improver", required: true}
+permissions: {contents: write, pull-requests: write}
+concurrency: {group: agents, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4          # 비공개 데이터 레포 (원고/리포트/성과)
+        with: {repository: helperpanda/agent-hq-data, token: "${{ secrets.DATA_REPO_PAT }}", path: _data}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: link data + install
+        run: |
+          for d in outbox reports proposals metrics; do ln -s _data/$d $d; done
+          npm i -g @anthropic-ai/claude-code
+          git config user.name agent-hq; git config user.email agent-hq@users.noreply.github.com
+      - name: pick agent
+        id: pick
+        run: |
+          case "${{ github.event.schedule }}${{ inputs.agent }}" in
+            "0 21 * * *"|cardnews) echo "a=cardnews" >> $GITHUB_OUTPUT; echo "p=cardnews 에이전트로 오늘 카드뉴스 3장 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
+            "0 22 * * *"|blog)     echo "a=blog" >> $GITHUB_OUTPUT; echo "p=blog 에이전트로 오늘 원고 1편 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
+            "0 1 * * 2,4,6"|shorts) echo "a=shorts" >> $GITHUB_OUTPUT; echo "p=shorts 에이전트로 쇼츠 대본 2편 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
+            "0 12 * * *"|chief)    echo "a=chief" >> $GITHUB_OUTPUT; echo "p=chief 에이전트로 오늘 일일 보고 작성해" >> $GITHUB_OUTPUT;;
+            "0 11 * * 0"|analyst)  echo "a=analyst" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 주간 리포트 작성해" >> $GITHUB_OUTPUT;;
+            "0 13 * * 0"|improver) echo "a=improver" >> $GITHUB_OUTPUT; echo "p=improver 에이전트로 주간 회고와 개선을 진행해" >> $GITHUB_OUTPUT;;
+            *) echo "unknown trigger"; exit 1;;
+          esac
+      - name: run agent
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: |
+          python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} working "자동 실행 시작"
+          claude -p "${{ steps.pick.outputs.p }}" --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch" || python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} error "자동 실행 실패 (Actions 로그 확인)"
+      - name: save data repo
+        run: |
+          cd _data && git add -A && (git diff --cached --quiet || git commit -qm "data: ${{ steps.pick.outputs.a }}") && git pull -q --rebase && git push -q
+      - name: save code/dashboard (improver 변경은 브랜치+PR)
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          rm -f outbox reports proposals metrics   # symlink 제거
+          BR=$(git branch --show-current)
+          git add -A docs divisions .claude scripts
+          git diff --cached --quiet || git commit -qm "auto: ${{ steps.pick.outputs.a }}"
+          git pull -q --rebase origin main || true
+          if [ "$BR" = "main" ]; then git push -q origin main
+          else git push -q origin "$BR" && gh pr create --fill --base main --head "$BR" || true; fi
