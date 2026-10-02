@@ -15,9 +15,9 @@
     "updated": "2026-10-02T17:45:14+09:00"
   },
   "cardnews": {
-    "state": "idle",
-    "message": "내일 06:00 출근",
-    "updated": "2026-10-02T17:15:14+09:00"
+    "state": "waiting",
+    "message": "사장 확인 필요: 뉴스 팩트 검증 불가로 카드 제작 보류",
+    "updated": "2026-10-02T20:32:58+09:00"
   },
   "blog": {
     "state": "idle",

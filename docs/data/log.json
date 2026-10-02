@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-02T20:32:58+09:00",
+    "agent": "cardnews",
+    "state": "waiting",
+    "message": "사장 확인 필요: 뉴스 팩트 검증 불가로 카드 제작 보류"
+  },
+  {
+    "time": "2026-10-02T20:32:33+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "오늘 뉴스 수집 중"
+  },
+  {
+    "time": "2026-10-02T20:32:28+09:00",
+    "agent": "cardnews",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-02T20:29:30+09:00",
     "agent": "chief",
     "state": "done",
