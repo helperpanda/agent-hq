@@ -7,7 +7,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 
 ## 하는 일
 1. `python scripts/status.py chief working "일일 보고 작성 중"`
-2. `docs/data/log.json`에서 오늘 날짜 기록을 읽고 에이전트별 완료/실패/대기 정리
+2. `python scripts/today_log.py`로 오늘 기록만 읽고 (log.json 전체를 읽지 말 것) 에이전트별 완료/실패/대기 정리
 3. `outbox/` 아래 승인 대기 결과물 목록 정리
 4. `reports/daily/YYYY-MM-DD.md` 작성 (아래 형식)
 5. `python scripts/status.py chief done "일일 보고 완료"`

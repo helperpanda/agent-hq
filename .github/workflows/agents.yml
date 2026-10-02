@@ -41,13 +41,21 @@ jobs:
             "0 13 * * 0"|improver) echo "a=improver" >> $GITHUB_OUTPUT; echo "p=improver 에이전트로 주간 회고와 개선을 진행해" >> $GITHUB_OUTPUT;;
             *) echo "unknown trigger"; exit 1;;
           esac
+      - name: gate + model
+        id: gate
+        run: |
+          A=${{ steps.pick.outputs.a }}
+          case $A in chief) M=haiku;T=10;; analyst) M=sonnet;T=20;; *) M=sonnet;T=30;; esac
+          echo "m=$M" >> $GITHUB_OUTPUT; echo "t=$T" >> $GITHUB_OUTPUT
+          if python scripts/gate.py $A; then echo "go=1" >> $GITHUB_OUTPUT; else echo "go=0" >> $GITHUB_OUTPUT; fi
       - name: run agent
+        if: steps.gate.outputs.go == '1'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: |
           python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} working "자동 실행 시작"
-          claude -p "${{ steps.pick.outputs.p }}" --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch" || python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} error "자동 실행 실패 (Actions 로그 확인)"
+          claude -p "${{ steps.pick.outputs.p }}" --model ${{ steps.gate.outputs.m }} --max-turns ${{ steps.gate.outputs.t }} --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch" || python scripts/status.py ${{ steps.pick.outputs.a == 'improver' && 'chief' || steps.pick.outputs.a }} error "자동 실행 실패 (Actions 로그 확인)"
       - name: save data repo
         run: |
           cd _data && git add -A && (git diff --cached --quiet || git commit -qm "data: ${{ steps.pick.outputs.a }}") && git pull -q --rebase && git push -q

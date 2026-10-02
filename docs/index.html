@@ -30,6 +30,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 h1{font-family:"DotGothic16",monospace;font-size:28px;margin:0;letter-spacing:1px}
 .sub{color:var(--muted);font-size:13px;margin-top:4px}
 .clock{font-family:"DotGothic16",monospace;font-size:14px;color:var(--muted);text-align:right}
+.btn{display:inline-block;margin-top:6px;font-family:inherit;font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--line);padding:3px 10px;text-decoration:none;box-shadow:2px 2px 0 var(--line)}
 .summary{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .pill{font-size:12px;padding:4px 10px;border:2px solid var(--line);border-radius:999px;background:var(--card);display:flex;gap:6px;align-items:center}
 .dot{width:8px;height:8px;border-radius:50%}
@@ -108,7 +109,7 @@ footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
       <h1><canvas class="logo" id="logo" width="16" height="16"></canvas>AGENT HQ</h1>
       <div class="sub">헬퍼판다 1인기업 · 에이전트 사무실 실시간 현황</div>
     </div>
-    <div class="clock" id="clock"></div>
+    <div class="clock"><div id="clock"></div><a class="btn" href="https://github.com/helperpanda/agent-hq-data/issues/new?template=metrics.yml" target="_blank" rel="noopener">📊 성과 입력</a></div>
   </header>
 
   <div class="summary" id="summary"></div>
