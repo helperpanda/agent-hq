@@ -35,7 +35,7 @@ h1{font-family:"DotGothic16",monospace;font-size:28px;margin:0;letter-spacing:1p
 .dot{width:8px;height:8px;border-radius:50%}
 
 /* office */
-.office{position:relative;border:3px solid var(--line);border-radius:6px;overflow:hidden;
+.office{image-rendering:pixelated;position:relative;border:3px solid var(--line);border-radius:6px;overflow:hidden;
   background:
    linear-gradient(var(--wall) 0 64px, transparent 64px),
    repeating-conic-gradient(var(--floor) 0 25%, var(--floor2) 0 50%) 0 64px/48px 48px;
@@ -48,20 +48,22 @@ h1{font-family:"DotGothic16",monospace;font-size:28px;margin:0;letter-spacing:1p
 @media (max-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:440px){.grid{grid-template-columns:1fr}}
 
-.station{position:relative;height:210px;cursor:pointer}
+.station{position:relative;height:236px;cursor:pointer}
 .bubble{position:absolute;top:0;left:50%;transform:translateX(-50%);max-width:94%;width:max-content;
   background:var(--card);border:2px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12px;line-height:1.35;
   text-align:center;z-index:3;box-shadow:2px 2px 0 var(--line)}
 .bubble:after{content:"";position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--line)}
-.char{position:absolute;left:50%;top:50px;transform:translateX(-50%);font-size:52px;line-height:1;z-index:2;filter:drop-shadow(2px 2px 0 rgba(0,0,0,.25))}
-.desk{position:absolute;left:8%;right:8%;top:112px;height:46px;background:var(--desk);border:2px solid var(--line);border-radius:4px;z-index:2}
+.char{position:absolute;left:50%;top:44px;transform:translateX(-50%);width:80px;height:80px;image-rendering:pixelated;z-index:2;filter:drop-shadow(3px 3px 0 rgba(0,0,0,.25))}
+.mini{width:32px;height:32px;image-rendering:pixelated}
+.logo{width:40px;height:40px;image-rendering:pixelated;vertical-align:middle;margin-right:6px}
+.desk{position:absolute;left:8%;right:8%;top:134px;height:46px;background:var(--desk);border:2px solid var(--line);border-radius:4px;z-index:2}
 .desk:before{content:"";position:absolute;left:-2px;right:-2px;top:-10px;height:12px;background:var(--desk-top);border:2px solid var(--line);border-radius:3px}
-.monitor{position:absolute;right:14%;top:86px;width:34px;height:26px;background:#2b3542;border:2px solid var(--line);z-index:3}
+.monitor{position:absolute;right:14%;top:108px;width:34px;height:26px;background:#2b3542;border:2px solid var(--line);z-index:3}
 .monitor i{position:absolute;inset:3px;background:var(--idle);opacity:.5}
-.nameplate{position:absolute;left:0;right:0;top:166px;text-align:center}
+.nameplate{position:absolute;left:0;right:0;top:188px;text-align:center}
 .nameplate b{font-family:"DotGothic16",monospace;font-size:15px;display:block}
 .nameplate small{color:var(--muted);font-size:11px}
-.badge{position:absolute;top:60px;right:6%;z-index:4;font-size:11px;font-weight:600;color:#fff;padding:2px 7px;border-radius:4px;border:2px solid var(--line)}
+.badge{position:absolute;top:70px;right:6%;z-index:4;font-size:11px;font-weight:600;color:#fff;padding:2px 7px;border-radius:4px;border:2px solid var(--line)}
 
 /* states */
 .s-working .char{animation:type .35s steps(2) infinite}
@@ -89,7 +91,7 @@ h1{font-family:"DotGothic16",monospace;font-size:28px;margin:0;letter-spacing:1p
 .feed{list-style:none;margin:0;padding:0;max-height:360px;overflow:auto}
 .feed li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:8px 2px;border-bottom:1px dashed var(--muted);font-size:13px}
 .feed li:last-child{border-bottom:0}
-.feed .e{font-size:20px;line-height:1}
+.feed .e{display:flex}
 .feed time{color:var(--muted);font-size:11px;white-space:nowrap}
 .tag{font-size:10px;font-weight:600;padding:1px 6px;border-radius:3px;color:#fff;margin-right:4px}
 .filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
@@ -103,7 +105,7 @@ footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
 <div class="wrap">
   <header>
     <div>
-      <h1>🐼 AGENT HQ</h1>
+      <h1><canvas class="logo" id="logo" width="16" height="16"></canvas>AGENT HQ</h1>
       <div class="sub">헬퍼판다 1인기업 · 에이전트 사무실 실시간 현황</div>
     </div>
     <div class="clock" id="clock"></div>
@@ -138,6 +140,61 @@ const STATE = {
   error:{label:"에러",color:"var(--error)"},
   idle:{label:"휴식",color:"var(--idle)"}
 };
+
+/* ---------- pixel sprites (16x16, canvas) ---------- */
+const BODY=[ // rows 4..15 (rows 12,13 = hands, swapped per frame)
+ "..oooooooooooo..",
+ ".offffffffffffo.",
+ ".offeffffffeffo.",
+ ".offbbbbbbbbffo.",
+ ".ofbbbbnnbbbbfo.",
+ "..oooooooooooo..",
+ "..oaaaaaaaaaao..",
+ ".oaaaaaaaaaaaao.",
+ null,null,
+ ".oaaaaaaaaaaaao.",
+ "..oooooooooooo.."];
+const R12A=".oaaaaaaaaaaaao.", R12B=".offaaaaaaaaffo.", R13A=".offaaaaaaaaffo.", R13B=".oaaaaaaaaaaaao.";
+const EARS={
+ round:["","",".ooo........ooo.",".oddo......oddo."],
+ fox:["..o..........o..","..oo........oo..","..ofo......ofo..","..offo....offo.."],
+ rabbit:["...oo......oo...","...oEo....oEo...","...oEo....oEo...","...ofo....ofo..."],
+ owl:["","","..o.o......o.o..","..ofo......ofo.."],
+ otter:["","","","..ofo......ofo.."]
+};
+const D="#2a241c";
+const CHARS={
+ chief:   {ears:"round",f:"#f4f1ea",b:"#ffffff",n:D,d:D,a:"#3a3f4a",e:D,over:[[3,6,D],[5,6,D],[3,7,D],[4,7,D],[5,7,D],[10,6,D],[12,6,D],[10,7,D],[11,7,D],[12,7,D],[7,11,"#d6453d"],[8,11,"#d6453d"],[7,12,"#d6453d"],[8,12,"#d6453d"]],eye:"#ffffff"},
+ analyst: {ears:"owl",f:"#a67c52",b:"#e9d8b8",n:"#e0a21b",a:"#4b6a8f",e:D,over:[[3,6,D],[5,6,D],[6,6,D],[7,6,D],[8,6,D],[9,6,D],[10,6,D],[12,6,D],[4,5,D],[11,5,D],[4,7,D],[11,7,D]]},
+ shorts:  {ears:"otter",f:"#8a5a3a",b:"#d9b48f",n:D,a:"#2f9e9e",e:D,over:[[1,6,"#e0742b"],[1,7,"#e0742b"],[14,6,"#e0742b"],[14,7,"#e0742b"],[2,4,"#e0742b"],[13,4,"#e0742b"]]},
+ cardnews:{ears:"fox",f:"#e0742b",b:"#fff1dc",n:D,a:"#f2c14e",e:D,over:[]},
+ blog:    {ears:"rabbit",f:"#f2eaf0",b:"#ffffff",n:"#e58aa8",E:"#f4b6c8",a:"#c98ac0",e:D,over:[[11,5,"#e58aa8"],[12,5,"#e58aa8"],[12,4,"#e58aa8"]]},
+ stock:   {ears:"round",f:"#6b4a2b",b:"#c9a77c",n:D,d:"#6b4a2b",a:"#5a5f6a",e:D,over:[]}
+};
+function drawSprite(cv,id,state,frame){
+  const c=CHARS[id]||CHARS.chief, ctx=cv.getContext("2d"); ctx.clearRect(0,0,16,16);
+  const rows=Array(16).fill("................");
+  EARS[c.ears].forEach((r,i)=>{ if(r) rows[i]=r.padEnd(16,".") });
+  BODY.forEach((r,i)=>{ if(r) rows[4+i]=r });
+  rows[12]=frame?R12B:R12A; rows[13]=frame?R13B:R13A;
+  const closed=(state==="idle");
+  const pal={o:D,f:c.f,b:c.b,n:c.n,a:c.a,d:c.d||c.f,E:c.E||c.b,e:c.eye||c.e};
+  rows.forEach((r,y)=>[...r].forEach((ch,x)=>{
+    if(ch==="."||!pal[ch]) return;
+    if(ch==="e"&&closed){ctx.fillStyle=pal.f;} else ctx.fillStyle=pal[ch];
+    ctx.fillRect(x,y,1,1);
+  }));
+  (c.over||[]).forEach(([x,y,col])=>{ctx.fillStyle=col;ctx.fillRect(x,y,1,1)});
+  if(closed){ctx.fillStyle=D;ctx.fillRect(4,6,1,1);ctx.fillRect(11,6,1,1)} // sleeping eyes
+  if(state==="error"){ctx.fillStyle="#d6453d";ctx.fillRect(4,6,1,1);ctx.fillRect(11,6,1,1);ctx.fillRect(7,9,2,1)}
+  if(state==="done"){ctx.fillStyle=D;ctx.fillRect(7,9,2,1)}
+}
+let FRAME=0;
+function drawAll(){
+  document.querySelectorAll("canvas[data-sp]").forEach(cv=>drawSprite(cv,cv.dataset.sp,cv.dataset.st,cv.dataset.anim?FRAME:0));
+}
+setInterval(()=>{FRAME^=1;document.querySelectorAll("canvas[data-anim]").forEach(cv=>drawSprite(cv,cv.dataset.sp,cv.dataset.st,FRAME))},350);
+
 let team=[], status={}, log=[], filterId="all";
 
 async function getJSON(p){
@@ -162,12 +219,13 @@ function render(){
       <div class="bubble">${esc(a.locked?"":st.message)}<br><small style="color:var(--muted)">${ago(st.updated)}</small></div>
       ${s==="idle"&&!a.locked?'<div class="zzz">z z</div>':""}
       ${a.locked?"":`<div class="badge" style="background:${STATE[s].color}">${STATE[s].label}</div>`}
-      <div class="char">${a.emoji}</div>
+      <canvas class="char" width="16" height="16" data-sp="${a.id}" data-st="${s}" ${s==="working"||s==="waiting"?"data-anim=1":""}></canvas>
       <div class="monitor"><i></i></div>
       <div class="desk"></div>
       <div class="nameplate"><b>${esc(a.name)}</b><small>${esc(a.role)}${a.locked?" 🔒":""}</small></div>
     </div>`;
   }).join("");
+  drawAll();
   grid.querySelectorAll(".station").forEach(el=>el.onclick=()=>{filterId=el.dataset.id;renderFeed()});
 
   const counts={}; team.filter(a=>!a.locked).forEach(a=>{const s=(status[a.id]||{}).state||"idle";counts[s]=(counts[s]||0)+1});
@@ -179,13 +237,14 @@ function render(){
 function renderFeed(){
   const byId=Object.fromEntries(team.map(a=>[a.id,a]));
   document.getElementById("filter").innerHTML=[{id:"all",emoji:"",name:"전체"},...team.filter(a=>!a.locked)].map(a=>
-    `<button class="${filterId===a.id?"on":""}" data-id="${a.id}">${a.emoji} ${esc(a.name)}</button>`).join("");
+    `<button class="${filterId===a.id?"on":""}" data-id="${a.id}">${esc(a.name)}</button>`).join("");
   document.querySelectorAll("#filter button").forEach(b=>b.onclick=()=>{filterId=b.dataset.id;renderFeed()});
   const items=log.filter(l=>filterId==="all"||l.agent===filterId).slice(0,80);
   document.getElementById("feed").innerHTML=items.length?items.map(l=>{
     const a=byId[l.agent]||{emoji:"❔",name:l.agent}; const s=STATE[l.state]||STATE.idle;
-    return `<li><span class="e">${a.emoji}</span><div><span class="tag" style="background:${s.color}">${s.label}</span><b>${esc(a.name)}</b> ${esc(l.message)}</div><time>${new Date(l.time).toLocaleString("ko-KR",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}</time></li>`;
+    return `<li><span class="e"><canvas class="mini" width="16" height="16" data-sp="${l.agent}" data-st="idle0"></canvas></span><div><span class="tag" style="background:${s.color}">${s.label}</span><b>${esc(a.name)}</b> ${esc(l.message)}</div><time>${new Date(l.time).toLocaleString("ko-KR",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}</time></li>`;
   }).join(""):`<li><span></span><span style="color:var(--muted)">기록 없음</span><span></span></li>`;
+  drawAll();
 }
 async function load(){
   try{
@@ -197,7 +256,7 @@ async function load(){
   }
 }
 function tick(){document.getElementById("clock").textContent=new Date().toLocaleString("ko-KR",{timeZone:"Asia/Seoul",weekday:"short",month:"long",day:"numeric",hour:"2-digit",minute:"2-digit"})+" KST"}
-tick();setInterval(tick,30000);load();setInterval(load,30000);
+drawSprite(document.getElementById("logo"),"chief","done",0);tick();setInterval(tick,30000);load();setInterval(load,30000);
 </script>
 </body>
 </html>

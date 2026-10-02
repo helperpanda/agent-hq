@@ -4,3 +4,9 @@ __pycache__/
 .DS_Store
 outbox/**/*.png
 outbox/**/*.mp4
+
+# 공개 레포용: 원고·리포트·제안서는 비공개 (로컬/VM에만 보관)
+outbox/
+reports/
+proposals/
+metrics/
