@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-02T22:26:44+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 청년미래적금 2차 10/7 신청 조건"
+  },
+  {
+    "time": "2026-10-02T22:25:43+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-02T22:25:35+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-02T21:29:36+09:00",
     "agent": "analyst",
     "state": "idle",
