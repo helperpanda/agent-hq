@@ -18,6 +18,7 @@ tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
 6. `used_topics.txt`에 추가, `python scripts/status.py shorts waiting "대본 N편 승인 대기"`
 
 ## 규칙
+- 시작할 때 `divisions/shorts/playbook.md`의 "어제 메모"를 읽고 오늘 제작에 반영한다.
 - **무인 실행 모드:** 질문하거나 멈추지 말고 가장 합리적인 선택으로 끝까지 진행한다. 확인 안 되는 사실·수치는 쓰지 않는다. 정말 못 만들었을 때만 `error` 상태로 이유를 남긴다.
 - 무섭거나 잔인한 장면(포식 장면 클로즈업 등) 금지.
 - 확실하지 않은 사실은 쓰지 않는다.

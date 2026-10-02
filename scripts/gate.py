@@ -13,6 +13,14 @@ def metric_rows():
     for f in (ROOT/"metrics").glob("*.csv"):
         n += max(0, sum(1 for l in open(f, encoding="utf-8") if l.strip()) - 1)
     return n
+if agent == "daily":
+    from datetime import date
+    y = (datetime.now(KST).date() - timedelta(days=1)).isoformat(); y2 = (datetime.now(KST).date() - timedelta(days=2)).isoformat()
+    hit = any(l.split(",")[0] in (y, y2) for f in (ROOT/"metrics").glob("*.csv") for l in open(f, encoding="utf-8").read().splitlines()[1:])
+    fbk = ROOT/"feedback"/"decisions.csv"
+    hit = hit or (fbk.exists() and any(l.startswith(y) or l.startswith(y2) for l in fbk.read_text(encoding="utf-8").splitlines()[1:]))
+    if not hit:
+        say("analyst", "어제 입력된 성과/피드백 없음 - 분석 생략"); sys.exit(1)
 if agent in ("analyst", "improver"):
     n = metric_rows()
     if n < 5:
