@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-04T09:27:48+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 종이팩 분리배출 10월 시작, 우리 아파트 해당?"
+  },
+  {
+    "time": "2026-10-04T09:19:22+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-04T09:19:15+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-04T08:16:32+09:00",
     "agent": "analyst",
     "state": "idle",
