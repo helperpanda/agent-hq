@@ -1,5 +1,12 @@
 [
   {
+    "id": "blog/2026-10-07",
+    "division": "blog",
+    "date": "2026-10-07",
+    "files": 13,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/blog/2026-10-07"
+  },
+  {
     "id": "blog/2026-10-06",
     "division": "blog",
     "date": "2026-10-06",

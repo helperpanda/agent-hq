@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-07T10:13:17+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 최적요금제 고지 10월 시행"
+  },
+  {
+    "time": "2026-10-07T10:11:20+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-07T10:11:14+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-07T09:01:32+09:00",
     "agent": "analyst",
     "state": "idle",
