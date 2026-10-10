@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-10-11T01:35:17+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-10-10T19:28:57+09:00",
     "agent": "blog",
     "state": "waiting",
