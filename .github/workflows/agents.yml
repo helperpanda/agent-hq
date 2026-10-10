@@ -9,6 +9,8 @@ on:
   workflow_dispatch:
     inputs:
       agent: {description: "chief|analyst|daily|blog|improver", required: true}
+      count: {description: "blog 전용: 오늘 쓸 편수 (기본 1, 최대 3)", required: false, default: "1"}
+      theme: {description: "blog 전용: 주제 방향 (예: 생활정보 - 물, 수면, 청소). 비우면 트렌드 정보성", required: false, default: ""}
 permissions: {contents: write, pull-requests: write}
 concurrency: {group: agents, cancel-in-progress: false}
 jobs:
@@ -31,9 +33,15 @@ jobs:
           git config --global user.name agent-hq; git config --global user.email agent-hq@users.noreply.github.com
       - name: pick agent
         id: pick
+        env: {IN_COUNT: "${{ inputs.count }}", IN_THEME: "${{ inputs.theme }}"}
         run: |
+          N=$(echo "$IN_COUNT" | tr -dc '1-3' | cut -c1); N=${N:-1}
+          TH=$(printf '%s' "$IN_THEME" | tr -d '"`$' | tr -s '[:cntrl:]\\' ' ' | cut -c1-120)
+          BP="blog 에이전트로 오늘 원고 1편 만들어 outbox에 저장해"
+          if [ "$N" != "1" ] || [ -n "$TH" ]; then BP="blog 에이전트로 추가 발행 모드: 오늘 원고 ${N}편을 만들어 outbox에 저장해. 주제 방향: ${TH:-트렌드 정보성}. 추가 발행 규칙은 blog.md 참고"; fi
+          echo "BP=$BP" >> $GITHUB_ENV; echo "IN_N=$N" >> $GITHUB_ENV
           case "${{ github.event.schedule }}${{ inputs.agent }}" in
-            "0 22 * * *"|blog)     echo "a=blog" >> $GITHUB_OUTPUT; echo "p=blog 에이전트로 오늘 원고 1편 만들어 outbox에 저장해" >> $GITHUB_OUTPUT;;
+            "0 22 * * *"|blog)     echo "a=blog" >> $GITHUB_OUTPUT; echo "p=$BP" >> $GITHUB_OUTPUT;;
             "30 20 * * *"|daily) echo "a=daily" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 일일 모드 분석을 해줘 (어제 성과와 승인/반려 피드백만)" >> $GITHUB_OUTPUT;;
             "0 12 * * *"|chief)    echo "a=chief" >> $GITHUB_OUTPUT; echo "p=chief 에이전트로 오늘 일일 보고 작성해" >> $GITHUB_OUTPUT;;
             "0 11 * * 0"|analyst)  echo "a=analyst" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 주간 리포트 작성해" >> $GITHUB_OUTPUT;;
@@ -55,7 +63,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: |
           python scripts/status.py ${{ steps.gate.outputs.s }} working "자동 실행 시작"
-          claude -p "${{ steps.pick.outputs.p }}" --model ${{ steps.gate.outputs.m }} --max-turns ${{ steps.gate.outputs.t }} --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch WebFetch" || python scripts/status.py ${{ steps.gate.outputs.s }} error "자동 실행 실패 (Actions 로그 확인)"
+          claude -p "${{ steps.pick.outputs.p }}" --model ${{ steps.gate.outputs.m }} --max-turns $(( ${{ steps.gate.outputs.t }} * ${IN_N:-1} )) --permission-mode acceptEdits --allowedTools "Bash Read Write Edit Glob Grep WebSearch WebFetch" || python scripts/status.py ${{ steps.gate.outputs.s }} error "자동 실행 실패 (Actions 로그 확인)"
       - name: save data repo
         run: |
           cd _data && git add -A && (git diff --cached --quiet || git commit -qm "data: ${{ steps.pick.outputs.a }}") && git pull -q --rebase && git push -q
