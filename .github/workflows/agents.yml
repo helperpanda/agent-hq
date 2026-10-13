@@ -17,6 +17,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env: {TZ: Asia/Seoul}   # 에이전트가 오늘 날짜를 KST로 쓰게
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4          # 비공개 데이터 레포 (원고/리포트/성과)
