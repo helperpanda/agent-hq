@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-14T09:49:33+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 보일러 첫 가동 전 점검 순서(상강 10/23)"
+  },
+  {
+    "time": "2026-10-14T09:49:30+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-14T09:49:24+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-14T08:49:35+09:00",
     "agent": "analyst",
     "state": "idle",
