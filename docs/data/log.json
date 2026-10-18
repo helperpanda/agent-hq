@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-10-18T23:12:49+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
+  },
+  {
     "time": "2026-10-18T08:44:03+09:00",
     "agent": "blog",
     "state": "waiting",
