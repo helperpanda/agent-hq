@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-20T09:54:19+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 어린이·임신부 독감 무료접종 2026"
+  },
+  {
+    "time": "2026-10-20T09:53:12+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-20T09:53:06+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-20T08:54:06+09:00",
     "agent": "analyst",
     "state": "idle",
