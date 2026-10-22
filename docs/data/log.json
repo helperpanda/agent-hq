@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-22T09:25:07+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 엠세이퍼 11월 말 기본 제공·안면인증"
+  },
+  {
+    "time": "2026-10-22T09:22:44+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-22T09:22:37+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-22T08:33:05+09:00",
     "agent": "analyst",
     "state": "idle",
