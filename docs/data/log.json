@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-24T09:13:41+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 신용카드 소득공제 4분기 체크카드 전환"
+  },
+  {
+    "time": "2026-10-24T09:12:09+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-24T09:12:03+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-24T08:22:57+09:00",
     "agent": "analyst",
     "state": "idle",
