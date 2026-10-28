@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-28T09:56:05+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 양육비 선지급 소득기준 폐지(10/29)"
+  },
+  {
+    "time": "2026-10-28T09:55:03+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-28T09:54:58+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-28T08:55:57+09:00",
     "agent": "analyst",
     "state": "idle",
