@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-10-30T10:31:31+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 11/9 주류 경고표시 변경"
+  },
+  {
+    "time": "2026-10-30T10:30:27+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-10-30T10:30:22+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-10-30T09:10:21+09:00",
     "agent": "analyst",
     "state": "idle",
