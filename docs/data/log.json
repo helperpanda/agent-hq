@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-02T10:13:19+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 일본 면세 11/1 사후환급 변경 안내"
+  },
+  {
+    "time": "2026-11-02T10:12:11+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-02T10:12:02+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-02T08:48:47+09:00",
     "agent": "analyst",
     "state": "idle",
