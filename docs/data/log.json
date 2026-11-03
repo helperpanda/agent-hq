@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-04T03:48:53+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-11-03T12:17:02+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "cardnews",
     "state": "working",
     "message": "오늘 뉴스 수집 중"
-  },
-  {
-    "time": "2026-10-02T20:32:28+09:00",
-    "agent": "cardnews",
-    "state": "working",
-    "message": "자동 실행 시작"
   }
 ]
