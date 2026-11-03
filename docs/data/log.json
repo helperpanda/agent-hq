@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-03T11:34:06+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
+  },
+  {
     "time": "2026-11-03T06:03:41+09:00",
     "agent": "chief",
     "state": "idle",
@@ -1192,11 +1198,5 @@
     "agent": "chief",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-02T18:44:14+09:00",
-    "agent": "chief",
-    "state": "done",
-    "message": "🎉 에이전트 본부 개소! 팀원 5명 배치 완료"
   }
 ]
