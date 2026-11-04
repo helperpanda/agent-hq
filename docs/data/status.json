@@ -13,5 +13,15 @@
     "state": "waiting",
     "message": "원고 1편 발행 대기: K-세일페스타 2026 기간·분야별 할인 일정",
     "updated": "2026-11-04T10:51:58+09:00"
+  },
+  "scout": {
+    "state": "waiting",
+    "message": "X 썰 초안 6개 확인 대기",
+    "updated": "2026-11-04T22:43:20+09:00"
+  },
+  "clipper": {
+    "state": "idle",
+    "message": "영상 받을 준비 완료",
+    "updated": "2026-11-04T22:43:20+09:00"
   }
 }

@@ -20,5 +20,19 @@
     "emoji": "🐰",
     "role": "네이버 블로그",
     "color": "#c9a0c4"
+  },
+  {
+    "id": "scout",
+    "name": "여우 스카우터",
+    "emoji": "🦊",
+    "role": "X 도파민 썰 초안",
+    "color": "#e0742b"
+  },
+  {
+    "id": "clipper",
+    "name": "햄스터 클리퍼",
+    "emoji": "🐹",
+    "role": "영상 클립+해설 X 초안",
+    "color": "#d9a441"
   }
 ]

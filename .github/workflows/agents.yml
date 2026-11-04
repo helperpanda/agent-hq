@@ -2,13 +2,14 @@ name: agents
 on:
   schedule:            # UTC (KST-9)
     - cron: "0 22 * * *"     # 07:00 KST blog
+    - cron: "0 3 * * *"      # 12:00 KST scout (X 썰 초안)
     - cron: "30 20 * * *"    # 05:30 KST 전날 피드백 분석 (제작 전에 playbook 갱신)
     - cron: "0 12 * * *"     # 21:00 KST chief 일일보고
     - cron: "0 11 * * 0"     # 일 20:00 KST analyst 주간
     - cron: "0 13 * * 0"     # 일 22:00 KST improver 회고/개선
   workflow_dispatch:
     inputs:
-      agent: {description: "chief|analyst|daily|blog|improver", required: true}
+      agent: {description: "chief|analyst|daily|blog|scout|improver", required: true}
       count: {description: "blog 전용: 오늘 쓸 편수 (기본 1, 최대 3)", required: false, default: "1"}
       theme: {description: "blog 전용: 주제 방향 (예: 생활정보 - 물, 수면, 청소). 비우면 트렌드 정보성", required: false, default: ""}
 permissions: {contents: write, pull-requests: write}
@@ -43,6 +44,7 @@ jobs:
           echo "BP=$BP" >> $GITHUB_ENV; echo "IN_N=$N" >> $GITHUB_ENV
           case "${{ github.event.schedule }}${{ inputs.agent }}" in
             "0 22 * * *"|blog)     echo "a=blog" >> $GITHUB_OUTPUT; echo "p=$BP" >> $GITHUB_OUTPUT;;
+            "0 3 * * *"|scout)     echo "a=scout" >> $GITHUB_OUTPUT; echo "p=scout 에이전트로 오늘 X용 실화 썰 초안 6개를 만들어 outbox/x에 저장해" >> $GITHUB_OUTPUT;;
             "30 20 * * *"|daily) echo "a=daily" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 일일 모드 분석을 해줘 (어제 성과와 승인/반려 피드백만)" >> $GITHUB_OUTPUT;;
             "0 12 * * *"|chief)    echo "a=chief" >> $GITHUB_OUTPUT; echo "p=chief 에이전트로 오늘 일일 보고 작성해" >> $GITHUB_OUTPUT;;
             "0 11 * * 0"|analyst)  echo "a=analyst" >> $GITHUB_OUTPUT; echo "p=analyst 에이전트로 주간 리포트 작성해" >> $GITHUB_OUTPUT;;

@@ -4,7 +4,7 @@
 
 - 대시보드: https://helperpanda.github.io/agent-hq/
 - 운영 규칙·구성·스케줄: [`CLAUDE.md`](CLAUDE.md)
-- 에이전트: 🐼 chief(일일 보고·회고) · 🐰 blog(트렌드 정보성 블로그 원고+이미지) · 🦉 analyst(쇼츠 성과 분석)
+- 에이전트: 🐼 chief(일일 보고·회고) · 🐰 blog(트렌드 정보성 블로그 원고+이미지) · 🦉 analyst(쇼츠 성과 분석) · 🦊 scout(X 썰 초안) · 🐹 clipper(영상 클립+해설 초안)
 - 결과물/성과 데이터는 비공개 레포 `agent-hq-data`에 저장
 
 ## 필요한 Secrets (레포 Settings → Secrets and variables → Actions)

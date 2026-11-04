@@ -184,6 +184,8 @@ const CHARS={
  shorts:  {ears:"otter",f:"#8a5a3a",b:"#d9b48f",n:D,a:"#2f9e9e",e:D,over:[[1,6,"#e0742b"],[1,7,"#e0742b"],[14,6,"#e0742b"],[14,7,"#e0742b"],[2,4,"#e0742b"],[13,4,"#e0742b"]]},
  cardnews:{ears:"fox",f:"#e0742b",b:"#fff1dc",n:D,a:"#f2c14e",e:D,over:[]},
  blog:    {ears:"rabbit",f:"#f2eaf0",b:"#ffffff",n:"#e58aa8",E:"#f4b6c8",a:"#c98ac0",e:D,over:[[11,5,"#e58aa8"],[12,5,"#e58aa8"],[12,4,"#e58aa8"]]},
+ clipper: {ears:"otter",f:"#d9a441",b:"#fff3d6",n:"#e58aa8",a:"#7a5c1e",e:D,over:[]},
+ scout:   {ears:"fox",f:"#e0742b",b:"#fff1dc",n:D,a:"#f2c14e",e:D,over:[]},
  stock:   {ears:"round",f:"#6b4a2b",b:"#c9a77c",n:D,d:"#6b4a2b",a:"#5a5f6a",e:D,over:[]}
 };
 function drawSprite(cv,id,state,frame){
@@ -211,7 +213,7 @@ function drawAll(){
 setInterval(()=>{FRAME^=1;document.querySelectorAll("canvas[data-anim]").forEach(cv=>drawSprite(cv,cv.dataset.sp,cv.dataset.st,FRAME))},350);
 
 let team=[], status={}, log=[], pending=[], filterId="all";
-const DIV={cardnews:"카드뉴스",blog:"블로그",shorts:"쇼츠"};
+const DIV={cardnews:"카드뉴스",blog:"블로그",shorts:"쇼츠",x:"X 썰"};
 const ISSUE="https://github.com/helperpanda/agent-hq/issues/new?template=decision.yml";
 function renderInbox(){
   document.getElementById("inboxCount").textContent=pending.length?"("+pending.length+"건 대기)":"";

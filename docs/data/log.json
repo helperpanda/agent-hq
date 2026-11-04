@@ -1,5 +1,17 @@
 [
   {
+    "time": "2026-11-04T22:43:20+09:00",
+    "agent": "clipper",
+    "state": "idle",
+    "message": "영상 받을 준비 완료"
+  },
+  {
+    "time": "2026-11-04T22:43:20+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 썰 초안 6개 확인 대기"
+  },
+  {
     "time": "2026-11-04T10:51:58+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1186,17 +1198,5 @@
     "agent": "cardnews",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-02T20:36:59+09:00",
-    "agent": "cardnews",
-    "state": "waiting",
-    "message": "카드뉴스 3장 완료, 8:30 예약 필요"
-  },
-  {
-    "time": "2026-10-02T20:36:33+09:00",
-    "agent": "cardnews",
-    "state": "working",
-    "message": "오늘 뉴스 수집 중"
   }
 ]
