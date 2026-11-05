@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-05T10:58:42+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 근로장려금 기한 후 신청 11/30"
+  },
+  {
+    "time": "2026-11-05T10:57:40+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-05T10:57:34+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-05T09:59:59+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-02T22:25:35+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-02T21:29:36+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-02T21:13:07+09:00",
-    "agent": "cardnews",
-    "state": "waiting",
-    "message": "카드뉴스 3장 완료, 8:30 업로드 대기"
   }
 ]
