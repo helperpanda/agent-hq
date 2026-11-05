@@ -16,8 +16,8 @@
   },
   "scout": {
     "state": "waiting",
-    "message": "X 썰 초안 6개 확인 대기",
-    "updated": "2026-11-04T22:43:20+09:00"
+    "message": "X 초안 6개 승인 대기",
+    "updated": "2026-11-05T19:21:09+09:00"
   },
   "clipper": {
     "state": "idle",
