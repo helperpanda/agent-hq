@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-07T03:51:32+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-11-06T19:28:32+09:00",
     "agent": "scout",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "analyst",
     "state": "idle",
     "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
-  },
-  {
-    "time": "2026-10-04T09:27:48+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 종이팩 분리배출 10월 시작, 우리 아파트 해당?"
   }
 ]
