@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-06T10:59:14+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 입동 주말 겨울 준비 체크리스트"
+  },
+  {
+    "time": "2026-11-06T10:58:13+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-06T10:58:06+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-06T10:04:56+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "analyst",
     "state": "idle",
     "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-04T00:24:43+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-03T09:54:30+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 10월 달라지는 제도 총정리"
-  },
-  {
-    "time": "2026-10-03T09:53:30+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
