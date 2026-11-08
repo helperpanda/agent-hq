@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-09T01:51:41+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
+  },
+  {
     "time": "2026-11-08T18:52:52+09:00",
     "agent": "scout",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-07T09:01:32+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
   }
 ]
