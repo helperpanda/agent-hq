@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-08T10:02:06+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 미신고 숙박업소 중개 제한 11/12 시행"
+  },
+  {
+    "time": "2026-11-08T10:01:04+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-08T10:00:57+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-08T08:50:53+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-06T11:01:51+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-06T10:23:39+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-06T07:08:30+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 에너지바우처 2026 신청(12/31까지)"
   }
 ]
