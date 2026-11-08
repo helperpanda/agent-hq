@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-09T03:14:06+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
+  },
+  {
     "time": "2026-11-09T02:23:29+09:00",
     "agent": "chief",
     "state": "idle",
@@ -1192,11 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 최적요금제 고지 10월 시행"
-  },
-  {
-    "time": "2026-10-07T10:11:20+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
