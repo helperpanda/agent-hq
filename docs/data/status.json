@@ -16,8 +16,8 @@
   },
   "scout": {
     "state": "waiting",
-    "message": "X 초안 6개 승인 대기 (분노/통쾌/황당/배신/짠함/소름)",
-    "updated": "2026-11-09T19:55:33+09:00"
+    "message": "X 초안 6개 승인 대기",
+    "updated": "2026-11-10T19:46:56+09:00"
   },
   "clipper": {
     "state": "idle",

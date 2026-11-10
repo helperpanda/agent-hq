@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-10T19:46:56+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기"
+  },
+  {
+    "time": "2026-11-10T19:45:30+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-10T19:45:24+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-10T12:57:50+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1180,23 +1198,5 @@
     "agent": "analyst",
     "state": "idle",
     "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-10T02:43:24+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-09T10:42:36+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 독감 무료접종 일정 2026"
-  },
-  {
-    "time": "2026-10-09T10:41:14+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
