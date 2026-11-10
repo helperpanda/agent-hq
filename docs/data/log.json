@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-10T12:57:50+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 수능 당일 출근·지하철·차량통제 총정리"
+  },
+  {
+    "time": "2026-11-10T12:56:34+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-10T12:56:26+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-10T11:52:21+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-09T10:41:08+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-09T09:35:11+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-09T07:27:06+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 여권 묶음 우편배송 전국 확대"
   }
 ]
