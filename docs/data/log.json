@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-11T10:42:07+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 전세사기 최소보장제 11/13 시행 총정리"
+  },
+  {
+    "time": "2026-11-11T10:40:49+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-11T10:40:44+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-11T09:49:16+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "추가 원고 2편 작업 시작"
-  },
-  {
-    "time": "2026-10-10T19:27:15+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-10T10:28:01+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 건보료 환급금 집중지급(10/1~11/30)"
-  },
-  {
-    "time": "2026-10-10T10:27:11+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
