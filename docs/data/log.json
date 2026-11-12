@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-12T19:40:16+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기"
+  },
+  {
+    "time": "2026-11-12T19:38:46+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-12T19:38:36+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-12T11:41:20+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-12T08:52:32+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-12T02:55:09+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
-  },
-  {
-    "time": "2026-10-12T02:00:05+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "오늘 활동 없음 - 보고 생략"
   }
 ]
