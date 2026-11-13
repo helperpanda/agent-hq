@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-13T10:23:47+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
+  },
+  {
     "time": "2026-11-13T04:18:57+09:00",
     "agent": "chief",
     "state": "idle",
@@ -1192,11 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 2027 수능 일정 총정리"
-  },
-  {
-    "time": "2026-10-12T09:55:13+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
