@@ -1,5 +1,47 @@
 [
   {
+    "id": "x/2026-11-13-6",
+    "division": "x",
+    "date": "2026-11-13-6",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-6"
+  },
+  {
+    "id": "x/2026-11-13-5",
+    "division": "x",
+    "date": "2026-11-13-5",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-5"
+  },
+  {
+    "id": "x/2026-11-13-4",
+    "division": "x",
+    "date": "2026-11-13-4",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-4"
+  },
+  {
+    "id": "x/2026-11-13-3",
+    "division": "x",
+    "date": "2026-11-13-3",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-3"
+  },
+  {
+    "id": "x/2026-11-13-2",
+    "division": "x",
+    "date": "2026-11-13-2",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-2"
+  },
+  {
+    "id": "x/2026-11-13-1",
+    "division": "x",
+    "date": "2026-11-13-1",
+    "files": 1,
+    "url": "https://github.com/helperpanda/agent-hq-data/tree/main/outbox/x/2026-11-13-1"
+  },
+  {
     "id": "blog/2026-11-13",
     "division": "blog",
     "date": "2026-11-13",
