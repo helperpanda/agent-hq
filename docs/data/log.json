@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-13T11:21:23+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 종부세 납부기간·분납 기준"
+  },
+  {
+    "time": "2026-11-13T11:20:37+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-13T11:20:30+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-13T10:23:47+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-13T11:12:11+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-13T05:35:23+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-12T09:56:25+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 2027 수능 일정 총정리"
   }
 ]
