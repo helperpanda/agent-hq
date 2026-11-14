@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-14T18:49:15+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기"
+  },
+  {
+    "time": "2026-11-14T18:48:02+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-14T18:47:58+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-14T10:58:05+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-14T08:49:35+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-14T07:14:50+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 보일러 첫 가동 전 점검 순서(상강 10/23)"
-  },
-  {
-    "time": "2026-10-14T07:13:48+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
