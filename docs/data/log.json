@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-15T09:08:19+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
+  },
+  {
     "time": "2026-11-15T02:27:49+09:00",
     "agent": "chief",
     "state": "idle",
@@ -1192,11 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 보일러 첫 가동 전 점검 순서(상강 10/23)"
-  },
-  {
-    "time": "2026-10-14T09:49:30+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
