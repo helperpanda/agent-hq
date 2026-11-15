@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-15T19:24:53+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기 (커튼/회의록/기념일/TF방/퇴사이불/중고태블릿)"
+  },
+  {
+    "time": "2026-11-15T19:23:15+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-15T19:23:09+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-15T10:30:18+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1180,23 +1198,5 @@
     "agent": "chief",
     "state": "idle",
     "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-15T09:17:41+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 2026 김장 물가(배추↓ 무·새우젓↑)"
-  },
-  {
-    "time": "2026-10-15T09:16:09+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-15T09:16:03+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
   }
 ]
