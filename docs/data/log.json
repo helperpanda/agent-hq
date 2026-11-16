@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-16T10:32:52+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 청년문화예술패스 2차 신청(11/30 마감)"
+  },
+  {
+    "time": "2026-11-16T10:31:56+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-16T10:31:51+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-16T09:14:35+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-17T07:58:18+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-17T00:46:29+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-16T09:03:03+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 청년미래적금 2차 오늘 마감·신청 후 일정"
   }
 ]
