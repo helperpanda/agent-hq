@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-17T06:25:19+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-11-16T19:38:45+09:00",
     "agent": "scout",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "chief",
     "state": "working",
     "message": "일일 보고 작성 중"
-  },
-  {
-    "time": "2026-10-17T23:38:43+09:00",
-    "agent": "chief",
-    "state": "working",
-    "message": "자동 실행 시작"
   }
 ]
