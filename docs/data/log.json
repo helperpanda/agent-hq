@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-16T19:38:45+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기"
+  },
+  {
+    "time": "2026-11-16T19:37:26+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-16T19:37:20+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-16T10:32:52+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1178,24 +1196,6 @@
   {
     "time": "2026-10-17T23:38:43+09:00",
     "agent": "chief",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-17T09:08:46+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 건강검진 대상 조회·12/31 기한"
-  },
-  {
-    "time": "2026-10-17T09:07:33+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-17T09:07:27+09:00",
-    "agent": "blog",
     "state": "working",
     "message": "자동 실행 시작"
   }

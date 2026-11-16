@@ -16,8 +16,8 @@
   },
   "scout": {
     "state": "waiting",
-    "message": "X 초안 6개 승인 대기 (커튼/회의록/기념일/TF방/퇴사이불/중고태블릿)",
-    "updated": "2026-11-15T19:24:53+09:00"
+    "message": "X 초안 6개 승인 대기",
+    "updated": "2026-11-16T19:38:45+09:00"
   },
   "clipper": {
     "state": "idle",
