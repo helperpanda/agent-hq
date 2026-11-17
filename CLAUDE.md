@@ -9,7 +9,7 @@
 | chief | 🐼 판다 팀장 | 일일 보고(21:00), 주간 회고·개선 제안(일 22:00) | `.claude/agents/chief.md`, `improver.md` |
 | blog | 🐰 토끼 블로거 | 트렌드 정보성 네이버 블로그 원고 + 이미지 (07:00) | `.claude/agents/blog.md` |
 | analyst | 🦉 부엉이 영상분석가 | 사장이 올린 쇼츠 성과 정밀 분석 (일일 05:30, 주간 일 20:00) | `.claude/agents/analyst.md` |
-| scout | 🦊 여우 스카우터 | X용 "실화 썰" 창작 초안 6개 (12:00) → 사장이 확인 후 복붙해 직접 게시 | `.claude/agents/scout.md`, `divisions/x/playbook.md` |
+| scout | 🦊 여우 스카우터 | **[중단 2026-11-16, 토큰 절감]** X용 "실화 썰" 창작 초안 6개 (12:00) → 사장이 확인 후 복붙해 직접 게시 | `.claude/agents/scout.md`, `divisions/x/playbook.md` |
 | clipper | 🐹 햄스터 클리퍼 | 사장이 준 도파민 영상에서 5~15초만 잘라 자막·출처 입히고 해설 스레드 초안 (요청 시, 스케줄 없음). 다운로드는 안 함 | `.claude/agents/clipper.md`, `scripts/make_clip.py` |
 
 카드뉴스·쇼츠 제작·주식은 폐지(정의 파일 삭제, git 기록에 남아 있음). 인스타·유튜브 제작·업로드는 사장이 직접 한다.
@@ -31,7 +31,7 @@
 |---|---|
 | 05:30 매일 | analyst(일일): 어제 영상 성과 분석 → playbook 반영 (입력 없으면 생략) |
 | 07:00 매일 | blog: 트렌드 정보성 원고 1편 + 이미지 → 승인함 |
-| 12:00 매일 | scout: X 썰 초안 6개 → 승인함(`outbox/x/`) |
+| ~~12:00 매일~~ | ~~scout: X 썰 초안~~ — 중단(수동 실행 `workflow_dispatch`만 가능) |
 | 21:00 매일 | chief: 일일 보고 (오늘 활동 없으면 생략) |
 | 일 20:00 | analyst(주간): 영상 성과 주간 분석·실험 제안 |
 | 일 22:00 | chief(improver): 회고 + 개선 (프롬프트·스크립트 변경은 브랜치+PR 제안만) |

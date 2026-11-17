@@ -2,7 +2,7 @@ name: agents
 on:
   schedule:            # UTC (KST-9)
     - cron: "0 22 * * *"     # 07:00 KST blog
-    - cron: "0 3 * * *"      # 12:00 KST scout (X 썰 초안)
+    # scout(X 썰) 스케줄 중단 2026-11-16 (토큰 절감). 재개: cron "0 3 * * *" 복원
     - cron: "30 20 * * *"    # 05:30 KST 전날 피드백 분석 (제작 전에 playbook 갱신)
     - cron: "0 12 * * *"     # 21:00 KST chief 일일보고
     - cron: "0 11 * * 0"     # 일 20:00 KST analyst 주간
