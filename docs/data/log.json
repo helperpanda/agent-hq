@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-17T20:29:16+09:00",
+    "agent": "scout",
+    "state": "waiting",
+    "message": "X 초안 6개 승인 대기"
+  },
+  {
+    "time": "2026-11-17T20:28:08+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "썰 초안 쓰는 중"
+  },
+  {
+    "time": "2026-11-17T20:28:01+09:00",
+    "agent": "scout",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-17T13:18:49+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1180,23 +1198,5 @@
     "agent": "chief",
     "state": "idle",
     "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-18T23:12:49+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
-  },
-  {
-    "time": "2026-10-18T08:44:03+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 유류세 인하 11월 말·석유 최고가격 동결"
-  },
-  {
-    "time": "2026-10-18T08:42:59+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
