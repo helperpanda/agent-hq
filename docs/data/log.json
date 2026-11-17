@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-17T13:18:49+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 에너지바우처 겨울 사용법·12/31 신청"
+  },
+  {
+    "time": "2026-11-17T13:17:45+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-17T13:17:41+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-17T12:04:37+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "working",
     "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-18T08:42:54+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-18T07:34:07+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-17T23:39:12+09:00",
-    "agent": "chief",
-    "state": "done",
-    "message": "일일 보고 완료"
   }
 ]
