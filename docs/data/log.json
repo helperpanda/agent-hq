@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-18T11:36:47+09:00",
+    "agent": "analyst",
+    "state": "idle",
+    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
+  },
+  {
     "time": "2026-11-18T05:13:51+09:00",
     "agent": "chief",
     "state": "idle",
@@ -1192,11 +1198,5 @@
     "agent": "analyst",
     "state": "idle",
     "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
-  },
-  {
-    "time": "2026-10-19T01:23:28+09:00",
-    "agent": "chief",
-    "state": "idle",
-    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
   }
 ]
