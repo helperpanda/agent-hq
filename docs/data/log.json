@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-21T04:25:50+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-11-20T11:50:22+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "chief",
     "state": "idle",
     "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-21T09:22:41+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 음주운전 방지장치 10/24 첫 적용"
   }
 ]
