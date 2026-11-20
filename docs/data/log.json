@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-20T11:50:22+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 스포츠강좌이용권 2027 11/27 마감"
+  },
+  {
+    "time": "2026-11-20T11:49:32+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-20T11:49:27+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-20T10:51:26+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 음주운전 방지장치 10/24 첫 적용"
-  },
-  {
-    "time": "2026-10-21T09:20:58+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-21T09:20:53+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-21T08:19:53+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
   }
 ]
