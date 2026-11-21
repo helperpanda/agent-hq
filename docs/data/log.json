@@ -1,5 +1,11 @@
 [
   {
+    "time": "2026-11-22T03:26:58+09:00",
+    "agent": "chief",
+    "state": "idle",
+    "message": "오늘 활동 없음 - 보고 생략"
+  },
+  {
     "time": "2026-11-21T11:58:46+09:00",
     "agent": "blog",
     "state": "waiting",
@@ -1192,11 +1198,5 @@
     "agent": "chief",
     "state": "idle",
     "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-22T09:25:07+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 엠세이퍼 11월 말 기본 제공·안면인증"
   }
 ]
