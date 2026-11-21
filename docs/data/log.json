@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-21T11:58:46+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 고향사랑기부제 연말 마감 체크"
+  },
+  {
+    "time": "2026-11-21T11:57:32+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-21T11:57:26+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-21T10:41:24+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 엠세이퍼 11월 말 기본 제공·안면인증"
-  },
-  {
-    "time": "2026-10-22T09:22:44+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-22T09:22:37+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-22T08:33:05+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
   }
 ]
