@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-24T14:43:57+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 연말정산 미리보기 12/18까지 이용법·달라진 공제"
+  },
+  {
+    "time": "2026-11-24T14:42:53+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-24T14:42:48+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-24T13:55:39+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "chief",
     "state": "idle",
     "message": "오늘 활동 없음 - 보고 생략"
-  },
-  {
-    "time": "2026-10-25T23:41:30+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "성과 데이터 0/5건 - 쌓이는 중 (실행 생략)"
-  },
-  {
-    "time": "2026-10-25T08:57:58+09:00",
-    "agent": "blog",
-    "state": "waiting",
-    "message": "원고 1편 발행 대기: 2027 수능 준비물·달라진 점"
-  },
-  {
-    "time": "2026-10-25T08:57:04+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
   }
 ]
