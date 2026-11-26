@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-26T12:55:30+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 근로·자녀장려금 기한 후 신청 12/1 마감"
+  },
+  {
+    "time": "2026-11-26T12:54:42+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-26T12:54:37+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-26T12:00:00+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 종합소득세 중간예납 2026(11/30)"
-  },
-  {
-    "time": "2026-10-27T10:03:47+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-27T10:03:41+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-27T09:01:35+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
   }
 ]
