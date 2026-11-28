@@ -1,5 +1,23 @@
 [
   {
+    "time": "2026-11-28T12:42:28+09:00",
+    "agent": "blog",
+    "state": "waiting",
+    "message": "원고 1편 발행 대기: 수도계량기 동파 예방 3가지"
+  },
+  {
+    "time": "2026-11-28T12:41:27+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "오늘 트렌드 보는 중"
+  },
+  {
+    "time": "2026-11-28T12:41:22+09:00",
+    "agent": "blog",
+    "state": "working",
+    "message": "자동 실행 시작"
+  },
+  {
     "time": "2026-11-28T11:54:07+09:00",
     "agent": "analyst",
     "state": "idle",
@@ -1180,23 +1198,5 @@
     "agent": "blog",
     "state": "waiting",
     "message": "원고 1편 발행 대기: 전기장판·전기히터 안전 사용법"
-  },
-  {
-    "time": "2026-10-29T10:29:31+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "오늘 트렌드 보는 중"
-  },
-  {
-    "time": "2026-10-29T10:29:25+09:00",
-    "agent": "blog",
-    "state": "working",
-    "message": "자동 실행 시작"
-  },
-  {
-    "time": "2026-10-29T09:15:48+09:00",
-    "agent": "analyst",
-    "state": "idle",
-    "message": "어제 입력된 성과/피드백 없음 - 분석 생략"
   }
 ]
